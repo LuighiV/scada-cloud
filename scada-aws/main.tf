@@ -39,7 +39,7 @@ resource "aws_lightsail_instance" "lightsail_instance" {
   user_data         = data.template_file.cloud_init.rendered
 
   provisioner "local-exec" {
-    command = "aws lightsail put-instance-public-ports --instance-name=terraform-instance --port-infos fromPort=22,toPort=22,protocol=tcp fromPort=8090,toPort=8090,protocol=tcp fromPort=1883,toPort=1883,protocol=tcp"
+    command = "aws lightsail put-instance-public-ports --region ${var.region} --instance-name=terraform-instance --port-infos fromPort=22,toPort=22,protocol=tcp fromPort=8090,toPort=8090,protocol=tcp fromPort=1883,toPort=1883,protocol=tcp"
   }
 }
 
