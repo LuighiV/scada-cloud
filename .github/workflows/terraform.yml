@@ -95,8 +95,8 @@ jobs:
       run: |
         terraform output private_key > id_rsa  
 
-    - name: Download result for terraform 
-      uses: actions/download-artifact@v2
+    - name: Uploading result of terraform 
+      uses: actions/upload-artifact@v2
       with:
         name: key
         path: id_rsa
