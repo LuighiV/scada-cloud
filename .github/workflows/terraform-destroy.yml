@@ -1,5 +1,7 @@
 # Workflow to destroy manually resources
 
+name: 'Terraform-destroy'
+
 on:
   workflow_dispatch:
     branches:
