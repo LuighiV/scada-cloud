@@ -1,4 +1,4 @@
-variable "credentials_file" {}
+#variable "credentials_file" {}
 
 variable "region" {
   default = "us-east-1"
