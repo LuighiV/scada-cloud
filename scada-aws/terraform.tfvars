@@ -1,2 +1,2 @@
-credentials_file="~/.aws/credentials"
-region = "us-east-1"
+credentials_file = "~/.aws/credentials"
+region           = "us-east-1"

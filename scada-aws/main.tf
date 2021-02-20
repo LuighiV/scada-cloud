@@ -23,17 +23,17 @@ provider "tls" {}
 
 provider "aws" {
   shared_credentials_file = file(var.credentials_file)
-  profile = var.profile
-  region  = var.region
+  profile                 = var.profile
+  region                  = var.region
 }
 
 ## Creates an AWS Lightsail Instance.
 # Adding firewall thanks to https://stackoverflow.com/a/60388340/5107192
 resource "aws_lightsail_instance" "lightsail_instance" {
   name              = "terraform-instance" ## Name of lightsail instance in AWS
-  availability_zone = var.zone 
+  availability_zone = var.zone
   blueprint_id      = var.lightsail_blueprints["ubuntu18"] ## Options for "wordpress", "wordpress_multi" or "nginx"
-  bundle_id         = var.lightsail_bundles["dev"] ## Options for instance size
+  bundle_id         = var.lightsail_bundles["dev"]         ## Options for instance size
   key_pair_name     = aws_lightsail_key_pair.key.name
   depends_on        = [aws_lightsail_key_pair.key]
   user_data         = data.template_file.cloud_init.rendered
