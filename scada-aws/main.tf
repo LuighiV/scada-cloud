@@ -9,6 +9,13 @@ terraform {
       version = "~> 3.0"
     }
   }
+  backend "remote" {
+    organization = "LVTechnologies"
+
+    workspaces {
+      name = "github-actions"
+    }
+  }
 }
 
 provider "template" {}
