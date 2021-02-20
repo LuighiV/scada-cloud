@@ -22,9 +22,9 @@ provider "template" {}
 provider "tls" {}
 
 provider "aws" {
-  shared_credentials_file = file(var.credentials_file)
-  profile                 = var.profile
-  region                  = var.region
+  #shared_credentials_file = file(var.credentials_file)
+  profile = var.profile
+  region  = var.region
 }
 
 ## Creates an AWS Lightsail Instance.
