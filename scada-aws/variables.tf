@@ -23,7 +23,7 @@ variable "environment" {
 variable "lightsail_bundles" {
   type = map(any)
   default = {
-    dev  = "nano_2_0"
+    dev  = "small_2_0"
     test = "small_2_0"
     prod = "medium_2_0"
   }
