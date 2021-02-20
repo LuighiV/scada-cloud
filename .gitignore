@@ -1,2 +1,4 @@
 # Terraform files
 .terraform*
+id_rsa
+ip_address.txt
