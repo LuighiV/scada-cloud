@@ -89,3 +89,14 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       run: terraform apply -auto-approve
+
+    - name: Terraform Outputs
+      shell: bash
+      run: |
+        terraform output private_key > id_rsa  
+
+    - name: Download result for terraform 
+      uses: actions/download-artifact@v2
+      with:
+        name: key
+        path: id_rsa
