@@ -32,7 +32,7 @@ provider "aws" {
 resource "aws_lightsail_instance" "lightsail_instance" {
   name              = "terraform-instance" ## Name of lightsail instance in AWS
   availability_zone = var.zone
-  blueprint_id      = var.lightsail_blueprints["ubuntu18"] ## Options for "wordpress", "wordpress_multi" or "nginx"
+  blueprint_id      = var.lightsail_blueprints["ubuntu20"] ## Options for "wordpress", "wordpress_multi" or "nginx"
   bundle_id         = var.lightsail_bundles["dev"]         ## Options for instance size
   key_pair_name     = aws_lightsail_key_pair.key.name
   depends_on        = [aws_lightsail_key_pair.key]
