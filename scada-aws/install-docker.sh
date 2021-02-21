@@ -1,5 +1,8 @@
 #!/bin/bash -e
 
+# Avoids prompting to accept update
+echo '* libraries/restart-without-asking boolean true' | sudo debconf-set-selections
+sudo apt-get clean
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get install -y  apt-transport-https ca-certificates curl gnupg-agent software-properties-common
