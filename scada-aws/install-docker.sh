@@ -5,8 +5,8 @@ export DEBIAN_FRONTEND=noninteractive
 echo '* libraries/restart-without-asking boolean true' | sudo debconf-set-selections
 sudo apt-get clean
 sudo apt-get update
-sudo apt-get -o Dpkg::Options::="--force-confdef" upgrade -yq
-sudo apt-get install -y  apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+sudo apt-get -o Dpkg::Options::=--force-confold -o Dpkg::Options::=--force-confdef upgrade -yq
+sudo apt-get install -yq  apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 # the command $(lsb_release -cs) is not evaluated, version hardcoded
